@@ -39,14 +39,18 @@ public unsafe class Assembler : IDisposable
     ///     The minimum size of the buffer to be used for FASM to return the
     ///     text to be assembled.
     /// </param>
-    public Assembler(int textSize = 0x10000, int resultSize = 0x8000)
+    /// <param name="fasmDir">
+    ///     The base directory to search for the FASM DLL.
+    ///     If not provided, the current directory and the executing assembly's directory will be searched.
+    /// </param>
+    public Assembler(int textSize = 0x10000, int resultSize = 0x8000, string fasmDir = null)
     {
         // Attempt allocation of memory X times.
         AllocateText(textSize);
         AllocateResult(resultSize);
 
         // Get path of FASM dll
-        string fasmDllPath = GetFasmDLLPath();
+        string fasmDllPath = GetFasmDLLPath(fasmDir);
         var fasmDllHandle = LoadLibraryW(fasmDllPath);
 
         // Throw exception if dll not loaded.
@@ -157,10 +161,20 @@ public unsafe class Assembler : IDisposable
     /// <summary>
     /// Retrieves the path of the FASM dll to load.
     /// </summary>
-    private string GetFasmDLLPath()
+    private string GetFasmDLLPath(string fasmDir = null)
     {
         const string FASM86DLL = "FASM.dll";
         const string FASM64DLL = "FASMX64.dll";
+
+        // Prioritize the explictly provided directory
+        if (!string.IsNullOrEmpty(fasmDir))
+        {
+            string fasmPath = Path.Combine(fasmDir, IntPtr.Size == 4 ? FASM86DLL : FASM64DLL);
+            if (File.Exists(fasmPath))
+                return fasmPath;
+            else
+                throw new FasmWrapperException($"Appropriate FASM DLL for X86/64 has not been found in the provided directory: {fasmDir}");
+        }
 
         // Check current directory.
         if (IntPtr.Size == 4 && File.Exists(FASM86DLL))
