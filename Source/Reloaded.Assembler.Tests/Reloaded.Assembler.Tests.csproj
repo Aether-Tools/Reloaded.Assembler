@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   
   <!-- Import Targets -->
-  <Import Project="../Reloaded.Assembler/Reloaded.Assembler.targets" />
+  <Import Project="../Reloaded.Assembler/AetherTools.Anamnesis.Reloaded.Assembler.targets" />
   
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
