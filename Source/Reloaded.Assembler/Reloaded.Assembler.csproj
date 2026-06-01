@@ -17,9 +17,9 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.dll</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <Description>Minimal .NET wrapper around the simple, easy to use Flat Assembler written by Tomasz Grysztar. Supports both x64 and x86 development on Windows.</Description>
     <Copyright>LGPL V3</Copyright>
-    <PackageProjectUrl>https://github.com/Reloaded-Project/Reloaded.Assembler</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Aether-Tools/Reloaded.Assembler</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Reloaded-Project/Reloaded.Assembler</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Aether-Tools/Reloaded.Assembler</RepositoryUrl>
     <Version>1.0.16-anamv1</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>Icon.png</PackageIcon>
