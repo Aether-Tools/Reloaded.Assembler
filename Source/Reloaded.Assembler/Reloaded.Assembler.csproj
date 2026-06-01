@@ -20,7 +20,7 @@
     <PackageProjectUrl>https://github.com/Aether-Tools/Reloaded.Assembler</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Aether-Tools/Reloaded.Assembler</RepositoryUrl>
-    <Version>1.0.16-anamv1</Version>
+    <Version>1.0.16-anamv2</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>Icon.png</PackageIcon>
 
