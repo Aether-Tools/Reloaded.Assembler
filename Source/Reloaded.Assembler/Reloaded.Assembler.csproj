@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <PackageId>AetherTools.Anamnesis.Reloaded.Assembler</PackageId>
+    <AssemblyName>AetherTools.Anamnesis.Reloaded.Assembler</AssemblyName>
     <TargetFrameworks>
       netstandard2.0;
       net5.0;
@@ -20,12 +21,15 @@
     <PackageProjectUrl>https://github.com/Aether-Tools/Reloaded.Assembler</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Aether-Tools/Reloaded.Assembler</RepositoryUrl>
-    <Version>1.0.14-anamv1</Version>
+    <Version>1.0.14-anamv2</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>Icon.png</PackageIcon>
 
     <LangVersion>preview</LangVersion>
     <IsTrimmable>true</IsTrimmable>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsAotCompatible>true</IsAotCompatible>
+    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
